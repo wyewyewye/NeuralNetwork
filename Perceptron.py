@@ -4,7 +4,7 @@ from LossFunc import LossFunc
 
 
 # Perceptron 感知器
-class Node:
+class Perceptron:
     def __init__(self, inputs, activator: Activator, loss_func_obj: LossFunc):
         self._w = []
         for i in range(len(inputs)):

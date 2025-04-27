@@ -1,7 +1,7 @@
 import math
 from LossFunc import LossFunc
 from Activator import Activator
-from Node import Node
+from Perceptron import Perceptron
 
 def MSE_loss(output, label):
     return 0.5 * (output - label) ** 2
@@ -31,10 +31,10 @@ if __name__ == "__main__":
     inputs_vec = [[0, 0], [0, 1], [1, 0], [1, 1]]
     labels = [0, 1, 1, 1]
     
-    node = Node(inputs_vec[0], sigmoid_activator, MSE_loss_func)
-    node.train(inputs_vec, labels, 0.1, 10000)
-    print(node)
+    perceptron = Perceptron(inputs_vec[0], sigmoid_activator, MSE_loss_func)
+    perceptron.train(inputs_vec, labels, 0.1, 10000)
+    print(perceptron)
     
     # test
     for inputs in inputs_vec:
-        print(f'{inputs} -> {node.predict(inputs)}')
+        print(f'{inputs} -> {perceptron.predict(inputs)}')
